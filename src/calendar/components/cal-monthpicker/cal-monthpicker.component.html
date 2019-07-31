@@ -1,0 +1,24 @@
+<div>
+
+    <div class="header">
+        <div style="width: 80%;"></div>
+        <input class="centre-btn" type="button" value=" &#x2191;" (click)="backToCalendar()">
+        <!-- <button  (click)="backToCalendar()">  &#x2191; </button> -->
+    </div>
+        <table class="months" >
+            <thead>
+                    <tr>
+                            <td  class="cd-header-divider" colspan="7"></td>
+                    </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let row of monthList; let i = index">
+                    <th   *ngFor="let month of row;let j = index"  [ngClass]="{'disable':check(month)}">
+                       <span *ngIf="!check(month)" (click)="monthSelected(i,j);"> {{ month.value }} </span>
+                       <span *ngIf="check(month)" > {{ month.value }} </span>
+                     </th>
+            </tr>
+        </tbody>
+
+        </table>
+</div>

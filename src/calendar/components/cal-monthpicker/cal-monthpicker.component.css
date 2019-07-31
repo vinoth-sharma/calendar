@@ -1,0 +1,36 @@
+.months{
+  margin-top: 14px;
+}
+.months th{
+  width: 69px;
+  height: 59px;
+  font-size: 14px;
+}
+
+.header{
+  padding: 3px;
+  display: flex;
+  margin-top: 15px;
+}
+
+.centre-btn{
+  border: unset;
+  background: unset;
+  width:10%;
+  text-align: center;
+  cursor: pointer;
+}
+table tr th:hover,.centre-btn:hover{
+  color: #009788;
+  cursor: pointer;
+}
+table tr th.disable:hover , .disable{
+  color: #d0cbcb !important;
+  cursor: default !important;
+}
+.cd-header-divider{
+  /* height:1px; */
+    width: 100%;
+  background: rgba(0,0,0,.12);
+
+}

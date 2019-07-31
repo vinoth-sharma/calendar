@@ -1,0 +1,55 @@
+
+    <div>
+        <div class="header">
+
+            <div class="left-btn rm-button-prop" (click) ="showYearView()">
+                    {{ showDate }}
+            </div>
+            <!-- <div class="left-btn rm-button-prop" (click) ="showYearView()">
+                {{ showDate }}
+             </div> -->
+            <div style="width:30%"></div>
+            <button class="centre-btn rm-button-prop" 
+                    (click)="previousMonth();" 
+                    [disabled]="minDateCheck()"
+                    [ngClass]="{'disable':minDateCheck()}">
+                <
+            </button>
+            <button class="right-btn rm-button-prop" 
+                    (click)="nextMonth();" 
+                    [disabled]="maxDateCheck()"
+                    [ngClass]="{'disable':maxDateCheck()}" >
+                >
+            </button>           
+        </div>
+
+        <table class="month-view">
+            <thead class="cd-days">
+                <tr>
+                    <th *ngFor="let day of daysList;">
+                        {{day}}
+                    </th>
+                </tr>
+                <tr>
+                    <td  class="cd-header-divider" colspan="7"></td>
+                </tr>
+            </thead>
+
+            <tbody class="cd-dates">
+
+
+                <tr *ngFor="let row of groupedArray;let i = index;">
+                    <th *ngFor="let ele of row;let j = index;" 
+                        [ngClass]="{'active':ele.isSelected,'disable':ele.isDisabled,'blackList':ele.isBlackList}">
+                        <span *ngIf ="ele.isDisabled" >{{ ele.value }}</span>
+                        <span *ngIf  ="!ele.isDisabled" (click)="dateClicked(i,j);">{{ ele.value }}</span>
+                    </th>
+                </tr>
+
+               
+            </tbody>
+
+        </table>
+    </div>
+
+    

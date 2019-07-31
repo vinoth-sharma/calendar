@@ -1,0 +1,59 @@
+.years{
+  margin-top: 63px;
+}
+.years th{
+  width: 66px;
+  height: 41px;
+}
+
+
+.header{
+  padding: 3px;
+  display: flex;
+  margin-top: 24px;
+}
+
+.left-btn{
+  width:45%;
+  font-size: 14px;
+  font-weight: 600;
+}
+.right-btn {
+  width: 10%;
+}
+.centre-btn{
+  width:10%;
+}
+.rm-button-prop{
+  text-transform: uppercase;
+  border: unset;
+  background: unset;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+}
+.disable{
+  color: #d0cbcb;
+  cursor: default !important;
+}
+table tr th{
+  cursor: pointer;
+}
+.disable:hover{
+  background-color: unset !important;
+  color: #d0cbcb !important; 
+  border-radius: unset !important;  
+}
+/* table tr th:hover{
+  background-color: #009788;
+  border-radius: 50%;
+  color: white;
+} */
+table tr th:hover{
+  color: #009788;
+  cursor: pointer;
+}
+.back_to_calendar{
+  font-weight: bold;
+  padding-left: 8px;
+}

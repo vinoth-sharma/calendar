@@ -1,0 +1,11 @@
+<div class="cus-calendar" [ngSwitch]="state">
+
+  <app-cal-datepicker *ngSwitchCase="statesList.DATE" (showYears)="viewYearSelected($event)" 
+  (onDateClick)="dateClicked($event);"  [selectedObj]="selectedMY" [minDate]="cdMinDate"
+   [maxDate]="cdMaxDate" (sendSelectedDate)="sendSelectedDate($event)" [blackList]="blackList"
+   [userSelectedDates]="selectedDates"> </app-cal-datepicker>
+  <app-cal-yearpicker *ngSwitchCase="statesList.YEAR" (showcalendar)="viewCalendar()" 
+  (showMonths)="viewMonths($event)" [selectedObj]="selectedMY" [minMaxDates]="minMaxDate"></app-cal-yearpicker>
+  <app-cal-monthpicker *ngSwitchCase="statesList.MONTH" (showcalendar)="viewCalendar()"
+  (monthSelectionSuccess)="monthSelectSuccess($event)" [minMaxDates]="minMaxDate"></app-cal-monthpicker>
+</div>

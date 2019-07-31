@@ -1,0 +1,29 @@
+<div>
+    <div class="header">
+        <button class="left-btn rm-button-prop"
+
+                (click)="backToCalendar()">
+            <span style="position: relative; top: 2px;">{{ yearRange }}</span>
+            <span class="back_to_calendar"> &#x2191;</span> 
+        </button>
+        <div style="width:30%"></div>        
+        <button class="centre-btn rm-button-prop" 
+                [disabled]="minYearCheck()"
+                [ngClass]="{'disable':minYearCheck()}"
+                (click)="previousYears()"> < </button>
+        <button class="right-btn rm-button-prop"
+                [disabled]="maxYearCheck()"
+                [ngClass]="{'disable':maxYearCheck()}"
+                (click)="nextYears()"> > </button>
+    </div>
+    <table class="years">
+        <tr *ngFor="let row of yearList">
+            <th *ngFor="let year of row" 
+                [ngClass]="{'disable':year.isDisabled}">
+                <span *ngIf ="year.isDisabled" >{{ year.value }}</span>
+                <span *ngIf ="!year.isDisabled" (click)="yearSelected(year.value);">{{ year.value }}</span>                
+            </th>
+        </tr>
+
+    </table>
+</div>
